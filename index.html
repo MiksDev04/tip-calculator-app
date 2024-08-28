@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <h2>SPLI</h2>
+      <h2>TTER</h2>
+    </header>
+    <main>
+      <div class="calculator-commnad">
+        <div class="bill-section">
+          <span>Bill</span>
+          <input placeholder="0" type="number" id="bill-input" />
+        </div>
+        <div class="select-tip-section">
+          <span>Select Tip %</span>
+          <div class="select-tip-section-wrapper">
+            <input type="radio" class="tip-option" name="select-tip" value="5" id="five" />
+            <label for="five">5%</label>
+            <input type="radio" class="tip-option" name="select-tip" value="10" id="ten" />
+            <label for="ten">10%</label>
+            <input type="radio" class="tip-option" name="select-tip" value="15" id="fifteen" />
+            <label for="fifteen">15%</label>
+            <input type="radio" class="tip-option" name="select-tip" value="25" id="twentyfive" />
+            <label for="twentyfive">25%</label>
+            <input type="radio" class="tip-option" name="select-tip" value="50" id="fifty" />
+            <label for="fifty">50%</label>
+            <input placeholder="Custom" class="custom" type="number" max="999">
+          </div>
+        </div>
+        <div class="people-number">
+          <span>Number of People</span>
+          <span class="error">Can't be zero</span>
+          <input placeholder="0" type="number" name="" id="number-of-people" />
+        </div>
+      </div>
+      <div class="tip-result">
+        <div class="tip-amount-wrapper">
+          <div class="tip-amount-label">
+            <h5>Tip Amount</h5>
+            <span>/ person</span>
+          </div>
+          <h1 class="tip-amount-result">$0.00</h1>
+        </div>
+        <div class="tip-total-wrapper">
+          <div class="tip-total-label">
+            <h5>Total</h5>
+            <span>/ person</span>
+          </div>
+          <h1 class="tip-total-result">$0.00</h1>
+        </div>
+        <button class="reset-tip">RESET</button>
+      </div>
+    </main>
+  </body>
+</html>

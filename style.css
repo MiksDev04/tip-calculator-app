@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*{
+   margin: 0;
+   padding: 0;
+   font-family: Space Mono, sans-serif;
+}
+
+*, *::before, *::after{
+   box-sizing: border-box;
+}
+
+:root{
+    /* ### Primary */
+    --Strong-cyan: hsl(172, 67%, 45%);
+    /* ### Neutral */
+    --Very-dark-cyan: hsl(183, 100%, 15%);
+    --Dark-grayish-cyan: hsl(186, 14%, 43%);
+    --Grayish-cyan: hsl(184, 14%, 56%);
+    --Light-grayish-cyan: hsl(185, 41%, 84%);
+    --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --White: hsl(0, 0%, 100%);
+
+    /* font size / font weight */
+    --fs: 24px;
+    --fw: 700;
+}
+
+body{
+   min-height: 100dvh;
+   background-color: var(--Light-grayish-cyan);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+header{
+   margin: 0 auto;
+}
+header h2{
+   text-align: center;
+   font-weight: var(--fw);
+   letter-spacing: .5rem;
+   transform: translateY(-50px);
+   color: var(--Dark-grayish-cyan);
+}
+
+/*  main content  */
+main{
+   display: grid;
+   width: clamp(375px, 100%, 950px);
+   grid-template-columns: repeat(2, 1fr);
+   gap: 2.5rem;
+   padding: 2.5rem;
+   border-radius: 20px;
+   background-color: var(--White);
+}
+
+.calculator-commnad{
+   display: grid;
+   padding: 1rem;
+   gap: 3rem;
+}
+.bill-section{
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+   color: var(--Very-dark-cyan);
+}
+.calculator-commnad span{
+   font-weight: var(--fw);
+   font-size: 16px;
+   color: var(--Dark-grayish-cyan);
+   position: relative;
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.calculator-commnad input{
+   border: none;
+   background-color: var(--Very-light-grayish-cyan);
+   padding: 1rem;
+   text-align: end;
+   font-size: 1.3rem;
+   font-weight: var(--fw);
+   color: var(--Very-dark-cyan);
+   border-radius: 5px;
+}
+.bill-section span::after{
+   position: absolute;
+   content: url('./images/icon-dollar.svg');
+   width: 2rem;
+   aspect-ratio: 1;
+   bottom: -4rem;
+   left: 1rem;
+  
+}
+.calculator-commnad input:not(.custom)::placeholder{
+   color: var(--Grayish-cyan);
+}
+
+.calculator-commnad input:focus-within{
+   outline: 3px solid var(--Strong-cyan);
+}
+
+.select-tip-section{
+   display: grid;
+   gap: 1rem;
+}
+.select-tip-section-wrapper{
+   display: grid;
+   gap: 1rem;
+   grid-template-columns: repeat(3, 1fr);
+}
+.select-tip-section-wrapper > input:not(.custom){
+   display: none;
+}
+.select-tip-section-wrapper > label{
+   font-size: var(--fs);
+   padding: .5rem;
+   color: var(--White);
+   background-color: var(--Very-dark-cyan);
+   border-radius: 5px;
+   text-align: center;
+}
+.select-tip-section-wrapper >input:checked + label {
+   background-color: var(--Strong-cyan);
+   color: var(--Very-dark-cyan);
+   font-weight: var(--fw);
+}
+.select-tip-section-wrapper .custom{
+   width: 100%;
+   padding: .5rem;
+   text-align: center;
+   color: var(--Dark-grayish-cyan);
+   font-size: var(--fs);
+   font-weight: var(--fw);
+   border: none;
+   border-radius: 5px;
+   background-color: var(--Very-light-grayish-cyan);
+}
+.select-tip-section-wrapper .custom:hover{
+   text-align: end;
+   outline: 3px solid var(--Strong-cyan);
+}
+.people-number{
+   display: flex;
+   justify-content: space-between;
+   gap: .5rem;
+   flex-wrap: wrap;
+}
+.people-number span:not(.error):after{
+   position: absolute;
+   width: 2rem;
+   aspect-ratio: 1;
+   bottom: -4rem;
+   left: 1rem;
+   content: url('./images/icon-person.svg');
+}
+.people-number .error{
+   opacity: 0;
+   color: tomato;
+}
+#number-of-people{
+   width: 100%;
+}
+.error-input{
+   outline: 3px solid tomato;
+}
+
+
+/* tip result */
+.tip-result{
+   border-radius: 20px;
+   display: flex;
+   flex-direction: column;
+   padding: 3.5rem 3rem;
+   gap: 3rem;
+   background-color: var(--Very-dark-cyan);
+}
+.tip-result > div{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.tip-result h1{
+   font-size: 3rem;
+   color: var(--Strong-cyan);
+}
+.tip-result h5{
+   color: var(--White);
+}
+.tip-result span{
+   color: var(--Grayish-cyan);
+}
+.tip-result button{
+   padding: 1rem;
+   font-size: var(--fs);
+   border-radius: 10px;
+   margin-top: auto;
+   border: none;
+   font-weight: var(--fw);
+   color: var(--Very-dark-cyan);
+    /* background-color: hsl(183, 100%, 19%); */
+    background-color: var(--Strong-cyan);
+}
+.tip-result button:hover{
+   background-color: var(--Light-grayish-cyan);
+}
+
+
+/* mobile size */
+@media (max-width: 900px) {
+   header{
+      margin: 0 auto;
+      padding: 2rem;
+   }
+   header h2{
+      text-align: center;
+      font-weight: var(--fw);
+      letter-spacing: .5rem;
+      transform: translateY(0px);
+   }
+   main{
+      display: grid;
+      width: clamp(375px, 100%, 950px);
+      grid-template-columns: none;
+      gap: 1rem;
+      padding: 1rem;
+      border-radius: 20px;
+      background-color: var(--White);
+   }  
+   .calculator-commnad{
+      display: grid;
+      padding: 1rem;
+      gap: 2rem;
+   }
+   .select-tip-section-wrapper{
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(2, 1fr);
+   }
+   .calculator-commnad input{
+      border: none;
+      background-color: var(--Very-light-grayish-cyan);
+      padding: .5rem;
+      text-align: end;
+      font-size: 1.3rem;
+      font-weight: var(--fw);
+      color: var(--Very-dark-cyan);
+      border-radius: 5px;
+   }
+   .calculator-commnad span::after{
+      bottom: -3.3rem;
+   }
+   .tip-result{
+      border-radius: 15px;
+      padding: 1.5rem;
+      gap: 1.5rem;
+   }
+   .tip-result > div{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+   .tip-result h1{
+      font-size: 2rem;
+      color: var(--Strong-cyan);
+   }
+
+   .tip-result button{
+      padding: .5rem;
+      border-radius: 5px;
+       /* background-color: hsl(183, 100%, 19%); */
+   }
+   
+}
